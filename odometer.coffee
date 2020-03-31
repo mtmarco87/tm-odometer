@@ -283,7 +283,8 @@ class Odometer
         else
           @addSpacer valueDigit
     else
-      wholePart = not @format.precision or not fractionalPart(value) or false
+      value = @preservePrecision value
+      wholePart = not @format.precision or false
       for digit in value.toString().split('').reverse()
         if digit is '.'
           wholePart = true
@@ -291,6 +292,20 @@ class Odometer
         @addDigit digit, wholePart
 
     return
+
+  preservePrecision: (value) ->
+    # This function fixes the precision at the end of the animation keeping the
+    # decimals even if we have 0 digits only
+    fixedValue = value
+    if @format.precision
+      parts = fixedValue.toString().split('.')
+      if parts.length is 1
+        fixedValue += '.'
+        parts[1] = ''
+      for i in [0...@format.precision]
+        if !parts[1][i]
+          fixedValue += '0'
+    return fixedValue
 
   update: (newValue) ->
     newValue = @cleanValue newValue
@@ -432,7 +447,8 @@ class Odometer
   animateSlide: (newValue) ->
     oldValue = @value
 
-    fractionalCount = @getFractionalDigitCount oldValue, newValue
+    # Fix to animate always the fixed decimal digits passed in input 
+    fractionalCount = @format.precision
 
     if fractionalCount
       newValue = newValue * Math.pow(10, fractionalCount)

@@ -1,11 +1,12 @@
 {
-  "name": "odometer",
-  "version": "0.4.8",
-  "description": "Transition numbers with ease",
+  "name": "tm-odometer",
+  "version": "1.0.5",
+  "description": "Transition numbers with ease (fixed version of HubSpot Odometer)",
   "main": "odometer.js",
   "authors": [
-    "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
-    "Zack Bloom <zackbloom@gmail.com>"
+    "Marco Trinastich (fixes) <mt.marco87@gmail.com>",
+    "Adam Schwartz (originl author) <adam.flynn.schwartz@gmail.com>",
+    "Zack Bloom (originl author) <zackbloom@gmail.com>"
   ],
   "license": "MIT",
   "devDependencies": {

@@ -335,7 +335,8 @@
           }
         }
       } else {
-        wholePart = !this.format.precision || !fractionalPart(value) || false;
+        value = this.preservePrecision(value);
+        wholePart = !this.format.precision || false;
         _ref1 = value.toString().split('').reverse();
         for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
           digit = _ref1[_j];
@@ -345,6 +346,24 @@
           this.addDigit(digit, wholePart);
         }
       }
+    };
+
+    Odometer.prototype.preservePrecision = function(value) {
+      var fixedValue, i, parts, _i, _ref;
+      fixedValue = value;
+      if (this.format.precision) {
+        parts = fixedValue.toString().split('.');
+        if (parts.length === 1) {
+          fixedValue += '.';
+          parts[1] = '';
+        }
+        for (i = _i = 0, _ref = this.format.precision; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+          if (!parts[1][i]) {
+            fixedValue += '0';
+          }
+        }
+      }
+      return fixedValue;
     };
 
     Odometer.prototype.update = function(newValue) {
@@ -507,7 +526,7 @@
     Odometer.prototype.animateSlide = function(newValue) {
       var boosted, cur, diff, digitCount, digits, dist, end, fractionalCount, frame, frames, i, incr, j, mark, numEl, oldValue, start, _base, _i, _j, _k, _l, _len, _len1, _len2, _m, _ref, _results;
       oldValue = this.value;
-      fractionalCount = this.getFractionalDigitCount(oldValue, newValue);
+      fractionalCount = this.format.precision;
       if (fractionalCount) {
         newValue = newValue * Math.pow(10, fractionalCount);
         oldValue = oldValue * Math.pow(10, fractionalCount);
