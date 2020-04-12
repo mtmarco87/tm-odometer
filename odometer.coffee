@@ -284,7 +284,7 @@ class Odometer
           @addSpacer valueDigit
     else
       value = @preservePrecision value
-      wholePart = not @format.precision or false
+      wholePart = not @format.precision
       for digit in value.toString().split('').reverse()
         if digit is '.'
           wholePart = true

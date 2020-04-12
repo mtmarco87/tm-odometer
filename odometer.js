@@ -336,7 +336,7 @@
         }
       } else {
         value = this.preservePrecision(value);
-        wholePart = !this.format.precision || false;
+        wholePart = !this.format.precision;
         _ref1 = value.toString().split('').reverse();
         for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
           digit = _ref1[_j];
