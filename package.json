@@ -1,14 +1,27 @@
 {
   "name": "tm-odometer",
-  "version": "1.0.6",
-  "description": "Transition numbers with ease (fixed version of HubSpot Odometer)",
-  "main": "odometer.js",
-  "authors": [
-    "Marco Trinastich (fixes) <mt.marco87@gmail.com>",
-    "Adam Schwartz (originl author) <adam.flynn.schwartz@gmail.com>",
-    "Zack Bloom (originl author) <zackbloom@gmail.com>"
+  "description": "TmOdometer: Lightweight JavaScript library for animated numeric counters with smooth transitions and precise decimal handling.",
+  "author": "Marco Trinastich <mt.marco87@gmail.com>",
+  "contributors": [
+    "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
+    "Zack Bloom <zackbloom@gmail.com>"
   ],
   "license": "MIT",
+  "version": "1.0.6",
+  "keywords": [
+    "tm-odometer",
+    "animated-counter",
+    "odometer",
+    "counter",
+    "javascript-library",
+    "numeric-animation",
+    "decimal-precision",
+    "customizable-themes",
+    "smooth-transitions",
+    "lightweight-library",
+    "tm-ng-odometer"
+  ],
+  "main": "odometer.js",
   "devDependencies": {
     "grunt-contrib-coffee": "~0.7.0",
     "coffee-script": "~1.6.3",

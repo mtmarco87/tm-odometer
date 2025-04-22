@@ -1,3 +1,8 @@
+# Node.js
 node_modules
-.sass-cache/
 yarn.lock
+package-lock.json
+
+# Misc
+.sass-cache/
+.DS_Store

@@ -25,13 +25,17 @@ To use a builtin theme, simply include the theme style sheet:
 
 ### Multiple Themes on One Page
 
-If you need to use multipled Odometer themes on a single page, do the following.
+If you need to use multiple Odometer themes on a single page, do the following.
 
 ```javascript
 odometerOptions = { auto: false }; // Disables auto-initialization
 
 // For each odometer, initialize with the theme passed in:
-var odometer = new Odometer({ el: $('.odometer')[0], value: 123, theme: 'car' });
+var odometer = new Odometer({
+  el: $('.odometer')[0],
+  value: 123,
+  theme: 'car',
+});
 odometer.render();
 ```
 
