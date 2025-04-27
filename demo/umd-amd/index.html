@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TmOdometer Showcase</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Include TmOdometer theme CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/tm-odometer/themes/odometer-theme-car.css"
+    />
+
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>TmOdometer</h1>
+        <p class="tagline">Smooth animated number counter (AMD Version)</p>
+      </header>
+
+      <div class="demo-card">
+        <div class="odometer-container">
+          <div id="odometer">0</div>
+        </div>
+
+        <div class="controls">
+          <button id="updateButton" class="btn primary-btn">
+            Generate Random Value
+          </button>
+          <button id="resetButton" class="btn secondary-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="additional-actions">
+        <a href="themes.html" class="btn outline-btn">
+          <span>View All Themes</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+
+      <footer>
+        <p>Using Car theme with AMD integration</p>
+      </footer>
+    </div>
+
+    <!-- Include RequireJS -->
+    <script src="./node_modules/requirejs/require.js"></script>
+    <script>
+      require.config({
+        baseUrl: './src',
+        paths: {
+          'tm-odometer': '../node_modules/tm-odometer/umd/tm-odometer',
+        },
+      });
+
+      require(['main']);
+    </script>
+  </body>
+</html>

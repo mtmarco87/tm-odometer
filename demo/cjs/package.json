@@ -1,0 +1,18 @@
+{
+    "name": "tm-odometer-cjs-demo",
+    "description": "A demo project for the tm-odometer package using pure CommonJS.",
+    "author": "Marco Trinastich <mt.marco87@gmail.com>",
+    "license": "MIT",
+    "version": "2.0.0",
+    "scripts": {
+        "start": "npm run dev",
+        "dev": "esbuild src/main.js src/themes.js --bundle --outdir=dist --platform=browser --servedir=. --serve=8000",
+        "build": "esbuild src/main.js src/themes.js --bundle --outdir=dist --platform=browser"
+    },
+    "dependencies": {
+        "tm-odometer": "2.0.0"
+    },
+    "devDependencies": {
+        "esbuild": "^0.25.3"
+    }
+}

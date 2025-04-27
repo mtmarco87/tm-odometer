@@ -1,0 +1,14 @@
+{
+    "name": "tm-odometer-amd-demo",
+    "description": "A demo project for the tm-odometer package using pure CommonJS.",
+    "author": "Marco Trinastich <mt.marco87@gmail.com>",
+    "license": "MIT",
+    "version": "2.0.0",
+    "scripts": {
+        "start": "open index.html"
+    },
+    "dependencies": {
+        "requirejs": "^2.3.7",
+        "tm-odometer": "2.0.0"
+    }
+}

@@ -2,37 +2,56 @@ Path = require('path')
 fs = require('fs')
 
 module.exports = (grunt) ->
+  # Load package.json
+  pkg = grunt.file.readJSON("package.json")
+  
+  # Define the output directory name using package name
+  pkgName = pkg.name.replace(/-lib$/, '')
+    
   grunt.initConfig
-    pkg: grunt.file.readJSON("package.json")
+    pkg: pkg
 
+    # Legacy Module Generation
     coffee:
       compile:
         files:
-          'odometer.js': 'odometer.coffee'
-          'docs/welcome/landing-page.js': 'docs/welcome/landing-page.coffee'
+          "dist/#{pkgName}/legacy/#{pkgName}.js": 'src/lib/core/tm-odometer.coffee'
 
-    watch:
-      coffee:
-        files: ['odometer.coffee', 'docs/welcome/landing-page.coffee', 'sass/*']
-        tasks: ["coffee", "uglify", "compass"]
-
-    uglify:
-      options:
-        banner: "/*! <%= pkg.name %> <%= pkg.version %> */\n"
-
-      dist:
-        src: 'odometer.js'
-        dest: 'odometer.min.js'
-
+    # Compile Sass to CSS
     compass:
       dist:
         options:
-          sassDir: 'sass'
-          cssDir: 'themes'
+          sassDir: 'src/themes'
+          cssDir: "dist/#{pkgName}/themes"
+          environment: 'production'
+          outputStyle: 'expanded'
+          line_comments: false
 
+    # Watch for changes in source files
+    watch:
+      coffee:
+        files: ['src/lib/core/tm-odometer.coffee', 'src/themes/*']
+        tasks: ["coffee", "terser:coffee", "compass"]
+
+    # Minify JavaScript files
+    terser:
+      options:
+        compress: true
+        mangle: true
+        output:
+          beautify: false
+          preamble: "/*! <%= pkg.name %> v<%= pkg.version %> | <%= pkg.license %> License */\n"
+
+      # Minify for Legacy Module
+      coffee:
+        files:
+          "dist/#{pkgName}/legacy/#{pkgName}.min.js": ["dist/#{pkgName}/legacy/#{pkgName}.js"]
+
+  # Load Grunt plugins
   grunt.loadNpmTasks 'grunt-contrib-watch'
-  grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-compass'
+  grunt.loadNpmTasks 'grunt-terser'
 
-  grunt.registerTask 'default', ['coffee', 'uglify', 'compass']
+  # Default task: build Legacy Module and compile Sass Themes
+  grunt.registerTask 'default', ['coffee', 'terser:coffee', 'compass']
