@@ -1,0 +1,19 @@
+{
+    "name": "tm-odometer-esm-demo",
+    "description": "A demo project for the tm-odometer package using ESM modules.",
+    "author": "Marco Trinastich <mt.marco87@gmail.com>",
+    "license": "MIT",
+    "version": "1.1.0",
+    "scripts": {
+        "start": "npm run dev",
+        "dev": "vite --port 8000",
+        "build": "tsc && vite build"
+    },
+    "dependencies": {
+        "tm-odometer": "1.1.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.8.3",
+        "vite": "^4.5.13"
+    }
+}

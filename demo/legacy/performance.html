@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TmOdometer Showcase</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Include theme CSS -->
+    <link
+      rel="stylesheet"
+      href="../../dist/tm-odometer/themes/odometer-theme-car.css"
+    />
+
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/performance.css" />
+
+    <!-- Include jQuery bundles -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"
+    />
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <!-- Include TmOdometer legacy bundle directly -->
+    <script src="../../dist/tm-odometer/legacy/tm-odometer.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>TmOdometer</h1>
+        <p class="tagline">Performance Test (Legacy Version)</p>
+      </header>
+
+      <div class="demo-card">
+        <div class="slider-container">
+          <p class="slider-title">
+            Adjust the slider to change the number of odometers:
+          </p>
+          <div class="slider"></div>
+        </div>
+
+        <div class="controls">
+          <a href="performance.html" class="btn primary-btn no-underline">
+            Reload Performance Test
+          </a>
+          <a href="index.html" class="btn secondary-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M19 12H5"></path>
+              <path d="m12 19-7-7 7-7"></path>
+            </svg>
+            <span>Back to Demo</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="container odometer-container"></div>
+
+      <footer>
+        <p>
+          Testing performance with multiple odometers using the Legacy version.
+        </p>
+      </footer>
+    </div>
+
+    <script src="./src/performance.js"></script>
+  </body>
+</html>

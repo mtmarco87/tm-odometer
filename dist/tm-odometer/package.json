@@ -1,0 +1,56 @@
+{
+  "name": "tm-odometer",
+  "description": "TmOdometer: Lightweight JavaScript library for animated numeric counters with smooth transitions and precise decimal handling.",
+  "author": "Marco Trinastich <mt.marco87@gmail.com>",
+  "contributors": [
+    "Adam Schwartz <adam.flynn.schwartz@gmail.com>",
+    "Zack Bloom <zackbloom@gmail.com>"
+  ],
+  "license": "MIT",
+  "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtmarco87/tm-odometer"
+  },
+  "bugs": {
+    "url": "https://github.com/mtmarco87/tm-odometer/issues"
+  },
+  "homepage": "https://github.com/mtmarco87/tm-odometer#readme",
+  "keywords": [
+    "tm-odometer",
+    "animated-counter",
+    "odometer",
+    "counter",
+    "javascript-library",
+    "typescript",
+    "numeric-animation",
+    "decimal-precision",
+    "customizable-themes",
+    "smooth-transitions",
+    "lightweight-library",
+    "tm-ng-odometer"
+  ],
+  "main": "cjs/tm-odometer.js",
+  "module": "esm/tm-odometer.js",
+  "browser": "umd/tm-odometer.js",
+  "unpkg": "umd/tm-odometer.min.js",
+  "jsdelivr": "umd/tm-odometer.min.js",
+  "types": "types/public-api.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/tm-odometer.js",
+      "require": "./cjs/tm-odometer.js",
+      "default": "./cjs/tm-odometer.js",
+      "types": "./types/public-api.d.ts"
+    },
+    "./themes/*": "./themes/*"
+  },
+  "files": [
+    "cjs",
+    "esm",
+    "umd",
+    "legacy",
+    "types",
+    "themes"
+  ]
+}

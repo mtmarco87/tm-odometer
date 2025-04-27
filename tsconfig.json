@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es2015", // Target modern JavaScript
+        "module": "esnext", // Use esnext module syntax
+        "moduleResolution": "node", // Resolve modules like Node.js
+        "outDir": "./dist", // Output directory for compiled files
+        "esModuleInterop": true, // Allow default imports from CommonJS modules
+        "forceConsistentCasingInFileNames": true, // Enforce consistent casing in file names        
+        "strict": true, // Enable strict type checking
+        "skipLibCheck": true, // Skip type checking of declaration files
+        "lib": [
+            "dom",
+            "es2015"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ], // Include all files in the src/ directory
+    "exclude": [
+        "node_modules",
+        "dist",
+        "scripts"
+    ] // Exclude node_modules and dist directories
+}

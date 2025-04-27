@@ -1,0 +1,64 @@
+/* Main page specific styles */
+.demo-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.odometer {
+  font-size: 4rem;
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+.additional-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.additional-actions a {
+  margin-right: 16px; /* Add space between buttons */
+}
+
+.additional-actions a:last-child {
+  margin-right: 0; /* Remove margin for the last button */
+}
+
+.outline-btn {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.outline-btn:hover {
+  background-color: rgba(13, 148, 136, 0.05);
+}
+
+@media (max-width: 600px) {
+  .demo-card {
+    padding: 1.5rem;
+  }
+  
+  .odometer {
+    font-size: 2.5rem;
+  }
+}

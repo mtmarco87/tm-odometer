@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #0d9488;
+    --primary-dark: #0f766e;
+    --primary-light: #14b8a6;
+    --accent-color: #f59e0b;
+    --text-color: #1e293b;
+    --light-text: #64748b;
+    --background: #f8fafc;
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+  }
+  
+  header {
+    margin-bottom: 2.5rem;
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tagline {
+    color: var(--light-text);
+    font-size: 1.1rem;
+  }
+  
+  .odometer-container {
+    background-color: #f1f5f9;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .primary-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.15);
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+  }
+  
+  .secondary-btn:hover {
+    background-color: rgba(13, 148, 136, 0.05);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  .btn svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  footer {
+    margin-top: 2rem;
+    color: var(--light-text);
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    .controls {
+      flex-direction: column;
+    }
+  }
